@@ -148,7 +148,6 @@ var passwordSelections = function () {
 
     var object = passwordSelections()
     //function to generate random array from true objects
-    //must call passwordSelections to initiate prompts
     if (object.lowerCase === true) {
       trueOptions.push(...lower);
     }
@@ -165,8 +164,9 @@ var passwordSelections = function () {
     for (var i = 0; i < passwordLength; i++) {
       result.push(trueOptions[Math.floor(Math.random() * trueOptions.length)]);
     }
+    //provides generated value from selected objects within 
     return result.join("");
-
+    //call passwordSelections and will ensure if object(s) not chosen, it wil only generate password with seleced object(s)
     passwordSelections();
   }
 
